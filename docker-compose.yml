@@ -19,3 +19,16 @@ services:
             - .:/app
         ports:
             - 8080:80
+
+    redis:
+        image: redis
+
+    mysql:
+        image: mysql:5.7
+        volumes:
+            - mysql_data:/var/lib/mysql
+        environment:
+            MYSQL_ROOT_PASSWORD: secret
+
+volumes:
+    mysql_data:
