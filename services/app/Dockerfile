@@ -25,6 +25,7 @@ RUN apt-get install -y \
                 nano \
                 php7.1-cli \
                 php7.1-dom \
+                php7.1-mysql \
                 php7.1-mbstring
 
 RUN curl -s http://getcomposer.org/installer | php && \
