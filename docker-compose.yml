@@ -1,0 +1,21 @@
+version: '3.2'
+services:
+    app:
+        build:
+            context: ./vendor/rmoore/docker/services/app
+        volumes:
+            - .:/app
+
+    php:
+        build:
+            context: ./vendor/rmoore/docker/services/php
+        volumes:
+            - .:/app
+
+    nginx:
+        build:
+            context: ./vendor/rmoore/docker/services/nginx
+        volumes:
+            - .:/app
+        ports:
+            - 8080:80

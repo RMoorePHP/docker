@@ -1,0 +1,4 @@
+#!/bin/bash
+
+composer require rmoore/docker
+cp ./vendor/rmoore/docker/docker-compose.yml ./docker-compose
