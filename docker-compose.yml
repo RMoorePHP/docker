@@ -49,5 +49,12 @@ services:
             - .:/app
         restart: unless-stopped
 
+    horizon:
+        build:
+            context: ./vendor/rmoore/docker/services/cron
+        volumes:
+            - .:/app
+        restart: unless-stopped
+
 volumes:
     mysql_data:
