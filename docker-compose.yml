@@ -32,6 +32,8 @@ services:
             MYSQL_DATABASE: homestead
             MYSQL_USER: homestead
             MYSQL_PASSWORD: secret
+        ports:
+            - 33061:3306
 
     webpack:
         build:
