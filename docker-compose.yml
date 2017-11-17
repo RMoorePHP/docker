@@ -40,12 +40,14 @@ services:
             context: ./vendor/rmoore/docker/services/webpack
         volumes:
             - .:/app
+        restart: on-failure
 
     horizon:
         build:
             context: ./vendor/rmoore/docker/services/horizon
         volumes:
             - .:/app
+        restart: unless-stopped
 
 volumes:
     mysql_data:
