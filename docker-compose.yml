@@ -33,5 +33,11 @@ services:
             MYSQL_USER: homestead
             MYSQL_PASSWORD: secret
 
+    webpack:
+        build:
+            context: ./vendor/rmoore/docker/services/webpack
+        volumes:
+            - .:/app
+
 volumes:
     mysql_data:
