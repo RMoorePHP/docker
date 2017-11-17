@@ -39,5 +39,11 @@ services:
         volumes:
             - .:/app
 
+    horizon:
+        build:
+            context: ./vendor/rmoore/docker/services/horizon
+        volumes:
+            - .:/app
+
 volumes:
     mysql_data:
