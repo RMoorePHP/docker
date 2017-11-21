@@ -49,7 +49,7 @@ services:
             - .:/app
         restart: unless-stopped
 
-    horizon:
+    cron:
         build:
             context: ./vendor/rmoore/docker/services/cron
         volumes:
