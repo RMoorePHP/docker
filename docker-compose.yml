@@ -5,12 +5,30 @@ services:
             context: ./vendor/rmoore/docker/services/app
         volumes:
             - .:/app
+        environment:
+            DB_CONNECTION: mysql
+            DB_HOST: mysql
+            DB_DATABASE: homestead
+            DB_USERNAME: homestead
+            DB_PASSWORD: secret
+            CACHE_DRIVER: redis
+            QUEUE_DRIVER: redis
+            REDIS_HOST: redis
 
     php:
         build:
             context: ./vendor/rmoore/docker/services/php
         volumes:
             - .:/app
+        environment:
+            DB_CONNECTION: mysql
+            DB_HOST: mysql
+            DB_DATABASE: homestead
+            DB_USERNAME: homestead
+            DB_PASSWORD: secret
+            CACHE_DRIVER: redis
+            QUEUE_DRIVER: redis
+            REDIS_HOST: redis
 
     nginx:
         build:
@@ -48,6 +66,15 @@ services:
         volumes:
             - .:/app
         restart: unless-stopped
+        environment:
+            DB_CONNECTION: mysql
+            DB_HOST: mysql
+            DB_DATABASE: homestead
+            DB_USERNAME: homestead
+            DB_PASSWORD: secret
+            REDIS_HOST: redis
+
+
 
     cron:
         build:
