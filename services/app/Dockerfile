@@ -33,4 +33,6 @@ RUN curl -s http://getcomposer.org/installer | php && \
 
 WORKDIR /app
 
+RUN mkdir /var/www && chmod -R 777 /var/www
+
 RUN usermod -u 1000 www-data
