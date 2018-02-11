@@ -81,6 +81,13 @@ services:
             context: ./vendor/rmoore/docker/services/cron
         volumes:
             - .:/app:cached
+            
+    ngrok:
+        image: gtriggiano/ngrok-tunnel
+        environment:
+            TARGET_HOST: nginx
+            TARGET_PORT: 80
+            NGROK_REGION: eu
 
 volumes:
     mysql_data:
