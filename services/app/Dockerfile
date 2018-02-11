@@ -15,18 +15,18 @@ RUN apt-get update -y
 RUN apt-get install -y software-properties-common
 RUN add-apt-repository -y ppa:ondrej/php
 
-RUN apt-get update -y
-
-RUN apt-get install -y \
-                openssl \
-                zip \
-                unzip \
-                git \
-                nano \
-                php7.1-cli \
-                php7.1-dom \
-                php7.1-mysql \
-                php7.1-mbstring
+RUN apt-get update && \
+    apt-get install -y \
+        openssl \
+        zip \
+        unzip \
+        git \
+        nano \
+        php7.1-cli \
+        php7.1-dom \
+        php7.1-mysql \
+        php7.1-mbstring \
+        php7.1-curl
 
 RUN curl -s http://getcomposer.org/installer | php && \
     mv composer.phar /usr/local/bin/composer
